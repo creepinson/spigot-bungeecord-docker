@@ -54,7 +54,7 @@ run_bungeecord() {
     echo "Running BungeeCord"
     echo "BUNGEECORD_OPTS: $BUNGEECORD_OPTS"
 
-    BUNGEECORD_COMMAND="gosu bungeecord java $BUNGEECORD_OPTS -jar $BUNGEECORD_HOME/$BUNGEECORD_JAR"
+    BUNGEECORD_COMMAND="java $BUNGEECORD_OPTS -jar $BUNGEECORD_HOME/$BUNGEECORD_JAR"
     PARAMS=$@
 
     echo "Extra parameters: ${PARAMS[@]}"
