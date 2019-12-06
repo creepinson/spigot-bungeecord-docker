@@ -2,18 +2,17 @@
 
 * * *
 
-
 ## About this image
 
 This Docker image allows you to run a BungeeCord instance quickly, with minimal fuss.
 
-This image was based on the `dlord/spigot` Docker Image.
+This image was based on the `dlord/bungeecord` Docker Image, and is maintained by Creepinson.
 
+[Minecraft EULA]: https://account.mojang.com/documents/minecraft_eula
 
 ## Base Docker image
 
-* java:7
-
+* java:8
 
 ## How to use this image
 
@@ -21,7 +20,7 @@ This image was based on the `dlord/spigot` Docker Image.
 
     docker run \
         --name spigot-instance \
-        -p 0.0.0.0:25577:25577 \
+        -p 0.0.0.0:25565:25577 \
         -d \
         -it \
         dlord/bungeecord
@@ -33,7 +32,6 @@ The image uses environment variables to configure the JVM settings.
 #### BUNGEECORD_OPTS
 
 You may adjust the JVM settings via the `BUNGEECORD_OPTS` variable.
-
 
 ## Extending this image
 
@@ -58,25 +56,22 @@ the simplest way to roll out updates without going inside the data volume.
 
 You can include them via the `BUNGEECORD_OPTS` variable in your Dockerfile.
 
-
 ## Supported Docker versions
 
 This image has been tested on Docker version 1.9
 
-
 ## Feedback and Contributions
 
-Feel free to open a [Github issue][].
+Feel free to open a [Github issue](https://github.com/creepinson/spigot-bungeecord-docker/issues).
 
-If you wish to contribute, you may open a pull request. I am very strict with
-commit standards, and pull requests with no descriptions will be closed
-immediately.
+If you wish to contribute, you may open a pull request.
 
-For commit standards, I follow a similar style to the Linux Kernel. See section
-1.2 of the [How to Get Your Change Into the Linux Kernel][]. For examples and
-tips, check out [this guide by Chris Beams][].
+## Todo
 
-[Github issue]: https://github.com/dlord/spigot-bungeecord-docker
-[Minecraft EULA]: https://account.mojang.com/documents/minecraft_eula
-[How to Get Your Change Into the Linux Kernel]: https://www.kernel.org/doc/Documentation/SubmittingPatches
-[this guide by Chris Beams]: http://chris.beams.io/posts/git-commit/
+* Add PLUGINS option to automatically download plugins to the server folder
+
+* Add links to helpful pages such as how to use docker
+
+* Add more documentation such as docker volume configuration
+
+* Add examples for docker-compose
